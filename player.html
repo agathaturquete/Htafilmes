@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HtaFilmes</title>
+    <link rel="stylesheet" href="player.css">
+</head>
+<body>
+    <div id="player">
+        <div id="controls">
+            <input type="range" id="range" min="0" max="1000" value="0">
+            <p id="time">0</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("range").addEventListener("change", (e)=>{
+            document.getElementById("time").innerText = document.getElementById("range").value
+        });
+        document.getElementById("player").style.backgroundImage = `url(${JSON.parse(localStorage.getItem("filme"))[1]})`;
+    </script>
+</body>
+</html>
